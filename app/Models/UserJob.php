@@ -12,15 +12,14 @@ class UserJob extends Model
     // Columns that are mass assignable
     protected $fillable = [
         'username',
-        'password',
+        'job_title',
         'gender',
         'jobid', 
-        'jobname',
     ];
 
     // Disable timestamps (created_at and updated_at)
     public $timestamps = false;
 
     // Set custom primary key
-    protected $primaryKey = 'jobid';
+    protected $primaryKey = 'id';
 }

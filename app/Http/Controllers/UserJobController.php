@@ -33,9 +33,9 @@ class UserJobController extends Controller
 {
     $rules = [
         'username' => 'required',
-        'password' => 'required',
+        'job_title' => 'max:50',
         'gender' => 'required',
-        'jobid' => 'required|integer',
+        'jobid' => 'required|numeric|min:1|not_in:0',
     ];
 
     $this->validate($request, $rules);
@@ -51,7 +51,7 @@ class UserJobController extends Controller
      {
          $rules = [
              'username' => 'max:20',
-             'password' => 'max:20',
+             'job_title' => 'max:20',
              'gender'   => 'in:Male,Female',
              'jobid'    => 'required|numeric|min:1|not_in:0',
          ];
